@@ -1,0 +1,15 @@
+IDEAS:
+
+- add a way to look for ammo that goes over a certain penetration threshold
+- (DONE) search hideout station by locales instead of ID
+
+- for all:
+	* show possible results to choose from
+		- (DONE)for example (maps): Customs, Interchange, Reserve etc... and then you can type the map
+		- (DONE)for example (ammo): 5.56x45, 5.45, 7.62x39___ DONE
+		- for example (hideout): generator, security, heating etc...
+
+
+
+
+
