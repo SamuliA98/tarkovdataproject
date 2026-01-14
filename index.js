@@ -1,5 +1,3 @@
-import * as tarkovData from 'tarkovdata';
-
 // Asking the name here
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
@@ -17,7 +15,7 @@ function askQuestion(query) {
 
 // Importing the needed functions from other sources
 import {getStationByLocaleName, getAllHideoutStations} from './hideout.js';
-import { getAmmunitionDataByName, getAllCalibers } from './ammunition.js';
+import { getAmmunitionDataByName, getAllCalibers} from './ammunition.js';
 import {getMapByLocaleName, getAllMapLocaleNames} from './maps.js';
 
 

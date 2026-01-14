@@ -7,20 +7,6 @@ async function loadAmmunitionData(){
     const data = await fs.readFile(filePath, 'utf-8'); //reads the ammunition.json file completely
     return JSON.parse(data); //parses the data so it can be utilized
 }
-  
-      
-//This adds all armorDamage values to a list and returns the list
-export async function getAmmunitionArmorDamages(){
-    const armorDamages = [];
-    const ammunitionData = await loadAmmunitionData();
-  
-    for (let key in ammunitionData){
-        if (ammunitionData[key].ballistics && ammunitionData[key].ballistics.armorDamage !== undefined) {
-        armorDamages.push(ammunitionData[key].ballistics.armorDamage);
-        }
-    }
-return armorDamages;
-}
 
 export async function getAllCalibers(){
     const ammunitionData = await loadAmmunitionData();
@@ -64,3 +50,4 @@ export async function getAmmunitionDataByName(name){
 
     return filteredAmmunition;
 }
+
