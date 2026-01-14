@@ -16,7 +16,7 @@ function askQuestion(query) {
 }
 
 // Importing the needed functions from other sources
-import {getStationByLocaleName} from './hideout.js';
+import {getStationByLocaleName, getAllHideoutStations} from './hideout.js';
 import { getAmmunitionDataByName, getAllCalibers } from './ammunition.js';
 import {getMapByLocaleName, getAllMapLocaleNames} from './maps.js';
 
@@ -51,6 +51,10 @@ async function main() {
           break;
 
         case 'B':
+          const allStations = await getAllHideoutStations();
+          console.log('Available stations :', allStations);
+
+
           const stationName = await askQuestion('Enter the hideout station name: ');
           const stationInfo = await getStationByLocaleName(stationName);
 

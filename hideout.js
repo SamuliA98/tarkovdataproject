@@ -8,11 +8,21 @@ export async function loadHideoutData() {
   const data = await fs.readFile(filePath, 'utf8');
   return JSON.parse(data); // Parse the JSON content
 }
-    
-// Function to get stations from the hideout data
-export async function getHideoutStations() {
+ 
+// This function collects all hideout station names to an array and returns them
+export async function getAllHideoutStations(){
   const hideoutData = await loadHideoutData();
-  return hideoutData.stations;
+  const stationData = hideoutData.stations;
+  const stations = [];
+
+  for (const key in stationData){
+    const locale = stationData[key].locales;
+    if (locale?.en){
+      stations.push(locale.en);
+    }
+  }
+
+  return stations;
 }
     
 // Function to get a station by its ID
@@ -21,6 +31,7 @@ export async function getHideoutStationById(id) {
   return hideoutData.stations.find(station => String(station.id) === String(id));
 }
 
+// This function returns the data of the wanted station
 export async function getStationByLocaleName(localeName) {
   const hideoutData = await loadHideoutData();
   const station = hideoutData.stations.find(

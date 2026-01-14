@@ -7,7 +7,7 @@ IDEAS:
 	* show possible results to choose from
 		- (DONE)for example (maps): Customs, Interchange, Reserve etc... and then you can type the map
 		- (DONE)for example (ammo): 5.56x45, 5.45, 7.62x39___ DONE
-		- for example (hideout): generator, security, heating etc...
+		- (DONE)for example (hideout): generator, security, heating etc...
 
 
 
