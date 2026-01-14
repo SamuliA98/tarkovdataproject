@@ -1,0 +1,32 @@
+GIT TUTORIAL:
+
+# Set up Git (if not done yet)
+git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"
+
+# Navigate to your project folder
+cd path/to/your/project
+
+# Initialize the git repository
+git init
+
+# Add your project files
+git add .
+
+# Commit your files
+git commit -m "Initial commit with my JavaScript files"
+
+# Link your local repository to GitHub
+git remote add origin https://github.com/your-username/my-tarkov-project.git
+
+# Push your changes to GitHub
+git push -u origin main
+
+_______________________________________________________________
+
+Future updates:
+
+git add .
+git commit -m "Updated my JavaScript files"
+
+git push
