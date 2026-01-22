@@ -12,6 +12,11 @@ IDEAS:
 		- (DONE)for example (ammo): 5.56x45, 5.45, 7.62x39___ DONE
 		- (DONE)for example (hideout): generator, security, heating etc...
 
+- weapon exploration
+	* search default version weapons (done)
+	* when having a weapon, it shows all the parts in it (hopping between item_presets and items?)
+
+- clean up ammo data (remove non-needed info)
 
 
 

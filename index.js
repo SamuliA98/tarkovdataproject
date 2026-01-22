@@ -17,6 +17,7 @@ function askQuestion(query) {
 import {getStationByLocaleName, getAllHideoutStations} from './hideout.js';
 import { getAmmunitionDataByName, getAllCalibers} from './ammunition.js';
 import {getMapByLocaleName, getAllMapLocaleNames} from './maps.js';
+import {getAllDefaultWeapons, getWeaponPresetDetailsByName} from './weapons.js';
 
 
 //loadAmmunitionData().then(data => console.log(data));
@@ -34,6 +35,7 @@ async function main() {
         'A) Look up ammunition calibers\n' +
         'B) Search hideout station by name\n' +
         'C) Load map data\n' +
+        'D) Search weapons\n' +
         'E) Exit\n' +
         'Your choice: '
       );
@@ -75,6 +77,28 @@ async function main() {
           } else {
             console.log('No map found!');
           }
+          break;
+
+        case 'D':
+          const defaultWeapons = await getAllDefaultWeapons();
+          console.log('All default weapons : ', defaultWeapons);
+
+          const weaponName = await askQuestion("Enter the weapon name: ");
+          const weaponInfo = await getWeaponPresetDetailsByName(weaponName);
+
+          if (!weaponInfo) {
+            console.log("Weapon not found.");
+            break;
+          }
+
+            console.log(`\nPreset: ${weaponInfo.presetName}`);
+            console.log("Base weapon:", weaponInfo.baseWeapon.name);
+            console.log("\nParts:");
+
+            for (const part of weaponInfo.parts) {
+              console.log(`- ${part.name}`);
+            }
+
           break;
 
         case 'E':
